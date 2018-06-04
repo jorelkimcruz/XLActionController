@@ -32,7 +32,7 @@ open class SALPayCell: ActionCell {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         selectedBackgroundView = backgroundView
-        actionTitleLabel?.textColor = .white
+        actionTitleLabel?.textColor = .darkGray
         actionTitleLabel?.textAlignment = .left
         
     }
@@ -43,11 +43,14 @@ public struct SALPayHeaderData {
     var title: String
     var subtitle: String
     var image: UIImage
+    var headerIconTintColor : UIColor
     
-    public init(title: String, subtitle: String, image: UIImage) {
+    
+    public init(title: String, subtitle: String, image: UIImage, headertintColor:UIColor) {
         self.title = title
         self.subtitle = subtitle
         self.image = image
+        self.headerIconTintColor = headertintColor
     }
 }
 
@@ -63,7 +66,7 @@ open class SALPayHeaderView: UICollectionReusableView {
     open lazy var title: UILabel = {
         let title = UILabel(frame: CGRect.zero)
         title.text = "The Fast And ... The Furious Soundtrack Collection"
-        title.textColor = UIColor.white
+        title.textColor = UIColor.darkGray
         title.translatesAutoresizingMaskIntoConstraints = false
         title.sizeToFit()
         return title
@@ -72,7 +75,7 @@ open class SALPayHeaderView: UICollectionReusableView {
     open lazy var artist: UILabel = {
         let discArtist = UILabel(frame: CGRect.zero)
         discArtist.text = "Various..."
-        discArtist.textColor = UIColor.white.withAlphaComponent(0.8)
+        discArtist.textColor = UIColor.darkGray.withAlphaComponent(0.8)
         discArtist.translatesAutoresizingMaskIntoConstraints = false
         discArtist.sizeToFit()
         return discArtist
@@ -98,9 +101,10 @@ open class SALPayHeaderView: UICollectionReusableView {
         addSubview(imageView)
         addSubview(title)
         addSubview(artist)
+        
         let separator: UIView = {
             let separator = UIView(frame: CGRect.zero)
-            separator.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+            separator.backgroundColor = UIColor.black.withAlphaComponent(0.1)
             separator.translatesAutoresizingMaskIntoConstraints = false
             return separator
         }()
@@ -130,14 +134,7 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
     open override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.addSubview(blurView)
-        
-      /*
-         cancelView?.frame.origin.y = view.bounds.size.height // Starts hidden below screen
-         cancelView?.layer.shadowColor = UIColor.black.cgColor
-         cancelView?.layer.shadowOffset = CGSize( width: 0, height: -4)
-         cancelView?.layer.shadowRadius = 2
-         cancelView?.layer.shadowOpacity = 0.8
-         */
+
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -154,18 +151,23 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
         settings.animation.present.springVelocity = 0.0
         settings.cancelView.hideCollectionViewBehindCancelView = true
         
-        cellSpec = .nibFile(nibName: "SalpayCell", bundle: Bundle(for: SALPayCell.self), height: { _ in 60 })
+        cellSpec = .nibFile(nibName: "SALPayCell", bundle: Bundle(for: SALPayCell.self), height: { _ in 60 })
         headerSpec = .cellClass( height: { _ in 84 })
         
         onConfigureCellForAction = { [weak self] cell, action, indexPath in
             cell.setup(action.data?.title, detail: action.data?.subtitle, image: action.data?.image)
+            cell.actionTitleLabel?.font = UIFont.systemFont(ofSize: 16)
+            cell.actionDetailLabel?.font = UIFont.systemFont(ofSize: 12)
+            cell.backgroundColor = UIColor.white
             cell.separatorView?.isHidden = indexPath.item == (self?.collectionView.numberOfItems(inSection: indexPath.section))! - 1
             cell.alpha = action.enabled ? 1.0 : 0.5
         }
         onConfigureHeader = { (header: SALPayHeaderView, data: SALPayHeaderData)  in
+            header.backgroundColor = UIColor.white
             header.title.text = data.title
             header.artist.text = data.subtitle
             header.imageView.image = data.image
+            header.imageView.tintColor = data.headerIconTintColor
         }
     }
     

@@ -45,13 +45,10 @@ class SpotifyExampleViewController: UIViewController {
     }
     
     @IBAction func tapGestureDidRecognize(_ sender: UITapGestureRecognizer) {
-        let actionController = SpotifyActionController()
-        actionController.headerData = SpotifyHeaderData(title: "The Fast And The Furious Soundtrack Collection", subtitle: "Various Artists", image: UIImage(named: "sp-header-icon")!)
+        let actionController = SALPayActionController()
+        actionController.headerData = SALPayHeaderData(title: "The Fast And The Furious Soundtrack Collection", subtitle: "Various Artists", image: UIImage(named: "sp-header-icon")!,headertintColor:UIColor.purple)
         actionController.addAction(Action(ActionData(title: "Save Full Album", image: UIImage(named: "sp-add-icon")!), style: .default, handler: { action in }))
         actionController.addAction(Action(ActionData(title: "Remove", image: UIImage(named: "sp-remove-icon")!), style: .default, handler: { action in }))
-        actionController.addAction(Action(ActionData(title: "Share", image: UIImage(named: "sp-share-icon")!), style: .default, handler: { action in }))
-        actionController.addAction(Action(ActionData(title: "Go to Album", image: UIImage(named: "sp-view-album-icon")!), style: .default, handler: { action in }))
-        actionController.addAction(Action(ActionData(title: "Start radio", image: UIImage(named: "sp-radio-icon")!), style: .default, handler: { action in }))
         
 
         present(actionController, animated: true, completion: nil)

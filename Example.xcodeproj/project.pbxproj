@@ -27,8 +27,8 @@
 		28B3B8801BFA8566007337A2 /* TwitterExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3B87C1BFA8566007337A2 /* TwitterExampleViewController.swift */; };
 		28B3B8821BFA856B007337A2 /* YouTubeExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3B8811BFA856B007337A2 /* YouTubeExampleViewController.swift */; };
 		28B3B88F1BFA8A09007337A2 /* XLActionController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B3B8891BFA858D007337A2 /* XLActionController.framework */; };
-		5A4282C220C4F06300B40693 /* SALPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4282C120C4F06300B40693 /* SALPayCell.swift */; };
 		5A4282C420C4F3DC00B40693 /* SALPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4282C320C4F3DC00B40693 /* SALPayCell.xib */; };
+		5AEFF43120C50FE30099321E /* SALPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFF43020C50FE30099321E /* SALPay.swift */; };
 		B297A9161C0E17AA00AF9559 /* Periscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A9151C0E17AA00AF9559 /* Periscope.swift */; };
 		B297A91B1C0E191600AF9559 /* Skype.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A91A1C0E191600AF9559 /* Skype.swift */; };
 		B297A9201C0E193B00AF9559 /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A91F1C0E193B00AF9559 /* Spotify.swift */; };
@@ -106,8 +106,8 @@
 		28B3B87C1BFA8566007337A2 /* TwitterExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterExampleViewController.swift; sourceTree = "<group>"; };
 		28B3B8811BFA856B007337A2 /* YouTubeExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExampleViewController.swift; sourceTree = "<group>"; };
 		28B3B8831BFA858D007337A2 /* XLActionController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XLActionController.xcodeproj; sourceTree = "<group>"; };
-		5A4282C120C4F06300B40693 /* SALPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALPayCell.swift; sourceTree = "<group>"; };
 		5A4282C320C4F3DC00B40693 /* SALPayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SALPayCell.xib; sourceTree = "<group>"; };
+		5AEFF43020C50FE30099321E /* SALPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SALPay.swift; sourceTree = "<group>"; };
 		B297A9151C0E17AA00AF9559 /* Periscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periscope.swift; sourceTree = "<group>"; };
 		B297A91A1C0E191600AF9559 /* Skype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skype.swift; sourceTree = "<group>"; };
 		B297A91F1C0E193B00AF9559 /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				B297A9261C0E198200AF9559 /* Twitter.swift */,
 				28650D2A1C0DD21A008C1F27 /* YoutubeCell.xib */,
 				B297A9291C0E19A500AF9559 /* Youtube.swift */,
-				5A4282C120C4F06300B40693 /* SALPayCell.swift */,
+				5AEFF43020C50FE30099321E /* SALPay.swift */,
 				5A4282C320C4F3DC00B40693 /* SALPayCell.xib */,
 			);
 			path = CustomActionControllers;
@@ -370,11 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B297A9161C0E17AA00AF9559 /* Periscope.swift in Sources */,
+				5AEFF43120C50FE30099321E /* SALPay.swift in Sources */,
 				28B3B8801BFA8566007337A2 /* TwitterExampleViewController.swift in Sources */,
 				28B3B87D1BFA8566007337A2 /* PeriscopeExampleViewController.swift in Sources */,
 				28A21F1E1C0E7DEE009FC30F /* ActionData.swift in Sources */,
 				28AD9C781C03F34F0044164E /* SkypeExampleViewController.swift in Sources */,
-				5A4282C220C4F06300B40693 /* SALPayCell.swift in Sources */,
 				28B3B85A1BFA7EEC007337A2 /* AppDelegate.swift in Sources */,
 				B297A91B1C0E191600AF9559 /* Skype.swift in Sources */,
 				28B3B8821BFA856B007337A2 /* YouTubeExampleViewController.swift in Sources */,
