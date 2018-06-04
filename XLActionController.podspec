@@ -24,7 +24,8 @@ Pod::Spec.new do |spec|
     'Spotify',
     'Tweetbot',
     'Twitter',
-    'Youtube'
+    'Youtube',
+    'SALPay'
   ]
 
   subspecs.each do |name|
