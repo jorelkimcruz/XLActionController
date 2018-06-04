@@ -62,7 +62,6 @@ open class SALPayHeaderView: UICollectionReusableView {
     
     open lazy var title: UILabel = {
         let title = UILabel(frame: CGRect.zero)
-        title.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
         title.text = "The Fast And ... The Furious Soundtrack Collection"
         title.textColor = UIColor.white
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +71,6 @@ open class SALPayHeaderView: UICollectionReusableView {
     
     open lazy var artist: UILabel = {
         let discArtist = UILabel(frame: CGRect.zero)
-        discArtist.font = UIFont(name: "HelveticaNeue", size: 16)
         discArtist.text = "Various..."
         discArtist.textColor = UIColor.white.withAlphaComponent(0.8)
         discArtist.translatesAutoresizingMaskIntoConstraints = false
@@ -133,11 +131,13 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
         super.viewDidLoad()
         backgroundView.addSubview(blurView)
         
-        cancelView?.frame.origin.y = view.bounds.size.height // Starts hidden below screen
-        cancelView?.layer.shadowColor = UIColor.black.cgColor
-        cancelView?.layer.shadowOffset = CGSize( width: 0, height: -4)
-        cancelView?.layer.shadowRadius = 2
-        cancelView?.layer.shadowOpacity = 0.8
+      /*
+         cancelView?.frame.origin.y = view.bounds.size.height // Starts hidden below screen
+         cancelView?.layer.shadowColor = UIColor.black.cgColor
+         cancelView?.layer.shadowOffset = CGSize( width: 0, height: -4)
+         cancelView?.layer.shadowRadius = 2
+         cancelView?.layer.shadowOpacity = 0.8
+         */
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +149,7 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         settings.behavior.bounces = true
         settings.behavior.scrollEnabled = true
-        settings.cancelView.showCancel = true
+        settings.cancelView.showCancel = false
         settings.animation.scale = nil
         settings.animation.present.springVelocity = 0.0
         settings.cancelView.hideCollectionViewBehindCancelView = true
