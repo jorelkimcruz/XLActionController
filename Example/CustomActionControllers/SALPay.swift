@@ -162,7 +162,7 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
             cell.separatorView?.isHidden = indexPath.item == (self?.collectionView.numberOfItems(inSection: indexPath.section))! - 1
             cell.alpha = action.enabled ? 1.0 : 0.5
         }
-        onConfigureHeader = { (header: SpotifyHeaderView, data: SpotifyHeaderData)  in
+        onConfigureHeader = { (header: SALPayHeaderView, data: SALPayHeaderData)  in
             header.title.text = data.title
             header.artist.text = data.subtitle
             header.imageView.image = data.image
