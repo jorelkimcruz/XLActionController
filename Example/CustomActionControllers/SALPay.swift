@@ -32,7 +32,7 @@ open class SALPayCell: ActionCell {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         selectedBackgroundView = backgroundView
-        actionTitleLabel?.textColor = .darkGray
+        actionTitleLabel?.textColor = .black
         actionTitleLabel?.textAlignment = .left
         
     }
@@ -66,7 +66,8 @@ open class SALPayHeaderView: UICollectionReusableView {
     open lazy var title: UILabel = {
         let title = UILabel(frame: CGRect.zero)
         title.text = "The Fast And ... The Furious Soundtrack Collection"
-        title.textColor = UIColor.darkGray
+        title.textColor = UIColor.black
+        title.font = UIFont.systemFont(ofSize: 16)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.sizeToFit()
         return title
@@ -75,7 +76,8 @@ open class SALPayHeaderView: UICollectionReusableView {
     open lazy var artist: UILabel = {
         let discArtist = UILabel(frame: CGRect.zero)
         discArtist.text = "Various..."
-        discArtist.textColor = UIColor.darkGray.withAlphaComponent(0.8)
+        discArtist.font = UIFont.systemFont(ofSize: 12)
+        discArtist.textColor = UIColor.black.withAlphaComponent(0.8)
         discArtist.translatesAutoresizingMaskIntoConstraints = false
         discArtist.sizeToFit()
         return discArtist
@@ -111,13 +113,13 @@ open class SALPayHeaderView: UICollectionReusableView {
         addSubview(separator)
         
         let views = [ "ico": imageView, "title": title, "artist": artist, "separator": separator ]
-        let metrics = [ "icow": 54, "icoh": 54 ]
+        let metrics = [ "icow": 30, "icoh": 30 ]
         let options = NSLayoutFormatOptions()
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[ico(icow)]-10-[title]-15-|", options: options, metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[ico(icow)]-20-[title]-15-|", options: options, metrics: metrics, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[separator]|", options: options, metrics: metrics, views: views))
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[ico(icoh)]", options: options, metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[ico(icoh)]", options: options, metrics: metrics, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-18-[title][artist]", options: .alignAllLeft, metrics: metrics, views: views))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[separator(1)]|", options: options, metrics: metrics, views: views))
     }
@@ -126,7 +128,7 @@ open class SALPayHeaderView: UICollectionReusableView {
 open class SALPayActionController: ActionController<SALPayCell, ActionData, SALPayHeaderView, SALPayHeaderData, UICollectionReusableView, Void> {
     
     fileprivate lazy var blurView: UIVisualEffectView = {
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         return blurView
     }()
@@ -152,7 +154,7 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
         settings.cancelView.hideCollectionViewBehindCancelView = true
         
         cellSpec = .nibFile(nibName: "SALPayCell", bundle: Bundle(for: SALPayCell.self), height: { _ in 60 })
-        headerSpec = .cellClass( height: { _ in 84 })
+        headerSpec = .cellClass( height: { _ in 65 })
         
         onConfigureCellForAction = { [weak self] cell, action, indexPath in
             cell.setup(action.data?.title, detail: action.data?.subtitle, image: action.data?.image)
