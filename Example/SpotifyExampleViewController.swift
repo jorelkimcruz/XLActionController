@@ -49,6 +49,7 @@ class SpotifyExampleViewController: UIViewController {
         actionController.settings.behavior.showwBackgroundViewOnShow = false
         actionController.settings.behavior.hideNavigationBarOnShow = false
         actionController.headerData = SALPayHeaderData(title: "The Fast And The Furious Soundtrack Collection", subtitle: "Various Artists", image: UIImage(named: "sp-header-icon")!,headertintColor:UIColor.purple)
+        
         actionController.addAction(Action(ActionData(title: "Save Full Album", image: UIImage(named: "sp-add-icon")!), style: .default, handler: { action in }))
         actionController.addAction(Action(ActionData(title: "Remove", image: UIImage(named: "sp-remove-icon")!), style: .default, handler: { action in }))
         
