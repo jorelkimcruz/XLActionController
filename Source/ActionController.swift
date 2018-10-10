@@ -233,12 +233,9 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
 
         modalPresentationCapturesStatusBarAppearance = settings.statusBar.modalPresentationCapturesStatusBarAppearance
 
-        if settings.behavior.showwBackgroundViewOnShow {
-            // background view
-            view.addSubview(backgroundView)
-        }
      
-
+        // background view
+        view.addSubview(backgroundView)
         // register main cell
         switch cellSpec {
         case .nibFile(let nibName, let bundle, _):
@@ -301,11 +298,9 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if settings.behavior.showwBackgroundViewOnShow {
-            // background view
+           // background view
             backgroundView.frame = view.bounds
-        }
-        
+      
 
         if let navController = presentingNavigationController, settings.behavior.hideNavigationBarOnShow {
             navigationBarWasHiddenAtStart = navController.isNavigationBarHidden
@@ -590,7 +585,7 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
     
     open func performCustomPresentationAnimation(_ presentedView: UIView, presentingView: UIView) {
    
-        backgroundView.alpha = settings.behavior.showwBackgroundViewOnShow ? 1.0 : 0.0
+        backgroundView.alpha = settings.behavior.showwBackgroundViewOnShow ? 1.0 : 0.4
      
         cancelView?.frame.origin.y = view.bounds.size.height - settings.cancelView.height - safeAreaInsets.bottom
         collectionView.frame = view.bounds
