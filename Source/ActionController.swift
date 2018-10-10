@@ -123,7 +123,7 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
     lazy open var backgroundView: UIView = {
         let backgroundView = UIView()
         backgroundView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         return backgroundView
     }()
     

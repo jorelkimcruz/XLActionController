@@ -136,18 +136,15 @@ open class SALPayActionController: ActionController<SALPayCell, ActionData, SALP
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-       if settings.behavior.showwBackgroundViewOnShow {
-            backgroundView.addSubview(blurView)
-        }
+        backgroundView.addSubview(blurView)
         
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if settings.behavior.showwBackgroundViewOnShow {
-            blurView.frame = backgroundView.bounds
-        }
-
+        blurView.frame = backgroundView.bounds
+        
+        
     }
     
     public override init(nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
