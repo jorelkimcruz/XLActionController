@@ -128,15 +128,26 @@ open class SALPayHeaderView: UICollectionReusableView {
 
 open class SALPayActionController: ActionController<SALPayCell, ActionData, SALPayHeaderView, SALPayHeaderData, UICollectionReusableView, Void> {
     
-
+    fileprivate lazy var blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        return blurView
+    }()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+       if settings.behavior.showwBackgroundViewOnShow {
+            backgroundView.addSubview(blurView)
+        }
         
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if settings.behavior.showwBackgroundViewOnShow {
+            blurView.frame = backgroundView.bounds
+        }
+
     }
     
     public override init(nibName nibNameOrNil: String? = nil, bundle nibBundleOrNil: Bundle? = nil) {
