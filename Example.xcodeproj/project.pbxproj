@@ -36,6 +36,7 @@
 		B297A9271C0E198200AF9559 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A9261C0E198200AF9559 /* Twitter.swift */; };
 		B297A92A1C0E19A500AF9559 /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A9291C0E19A500AF9559 /* Youtube.swift */; };
 		B297A9361C0E26E300AF9559 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297A9351C0E26E300AF9559 /* MainViewController.swift */; };
+		C49091C8216DF43300D52B7E /* SALPayActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49091C7216DF43300D52B7E /* SALPayActionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		B297A9261C0E198200AF9559 /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		B297A9291C0E19A500AF9559 /* Youtube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		B297A9351C0E26E300AF9559 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C49091C7216DF43300D52B7E /* SALPayActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SALPayActionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				28B3B8601BFA7EEC007337A2 /* Assets.xcassets */,
 				28B3B8621BFA7EEC007337A2 /* LaunchScreen.storyboard */,
 				28B3B8651BFA7EEC007337A2 /* Info.plist */,
+				C49091C7216DF43300D52B7E /* SALPayActionViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				B297A9271C0E198200AF9559 /* Twitter.swift in Sources */,
 				B297A9201C0E193B00AF9559 /* Spotify.swift in Sources */,
 				B297A92A1C0E19A500AF9559 /* Youtube.swift in Sources */,
+				C49091C8216DF43300D52B7E /* SALPayActionViewController.swift in Sources */,
 				28B3B87F1BFA8566007337A2 /* TweetbotExampleViewController.swift in Sources */,
 				B297A9241C0E195F00AF9559 /* Tweetbot.swift in Sources */,
 			);

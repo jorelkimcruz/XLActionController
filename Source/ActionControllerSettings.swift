@@ -60,6 +60,12 @@ public struct ActionControllerSettings {
          * presented. Its default value is `true`
          */
         public var hideNavigationBarOnShow = true
+        
+        /**
+         * A Boolean value that determines whether the background view will show when action controller is being
+         * presented. Its default value is `true`
+         */
+        public var showwBackgroundViewOnShow = true
     }
     
     /** Struct that contains properties to configure the cancel view */

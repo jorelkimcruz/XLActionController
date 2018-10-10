@@ -233,8 +233,11 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
 
         modalPresentationCapturesStatusBarAppearance = settings.statusBar.modalPresentationCapturesStatusBarAppearance
 
-        // background view
-        view.addSubview(backgroundView)
+        if settings.behavior.showwBackgroundViewOnShow {
+            // background view
+            view.addSubview(backgroundView)
+        }
+     
 
         // register main cell
         switch cellSpec {
@@ -298,7 +301,11 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        backgroundView.frame = view.bounds
+        if settings.behavior.showwBackgroundViewOnShow {
+            // background view
+            backgroundView.frame = view.bounds
+        }
+        
 
         if let navController = presentingNavigationController, settings.behavior.hideNavigationBarOnShow {
             navigationBarWasHiddenAtStart = navController.isNavigationBarHidden
@@ -582,7 +589,9 @@ open class ActionController<ActionViewType: UICollectionViewCell, ActionDataType
     }
     
     open func performCustomPresentationAnimation(_ presentedView: UIView, presentingView: UIView) {
-        backgroundView.alpha = 1.0
+   
+        backgroundView.alpha = settings.behavior.showwBackgroundViewOnShow ? 1.0 : 0.0
+     
         cancelView?.frame.origin.y = view.bounds.size.height - settings.cancelView.height - safeAreaInsets.bottom
         collectionView.frame = view.bounds
         // Override this to add custom animations. This method is performed within the presentation animation block
