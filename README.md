@@ -1,4 +1,3 @@
-# XLActionController for SALPay
 
 forked from (XLActionController)(https://github.com/xmartlabs/XLActionController)
 By [XMARTLABS](http://xmartlabs.com).
